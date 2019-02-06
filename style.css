@@ -3,16 +3,6 @@
 /*
 * Layout
 */
-body {
-    background-color: #F5F6FA;
-    color: #7C8FB5;
-    font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-a { color: inherit; }
-
-svg path { fill: #B0BFDE; }
-
 .content {
     display: flex;
     min-height: 100%;
@@ -64,19 +54,15 @@ svg path { fill: #B0BFDE; }
 
 .gaming-img-container {
     display: flex;
-    width: 120px;
-    align-items: flex-end;
+    width: 145px;
     position: relative;
 }
 
 .gaming-img {
     pointer-events: none;
     transform: rotate(5deg);
-    width: 120px;
+    width: 145px;
     height: 100px;
-    top: 35px;
-    left: 0;
-    position: absolute;
 }
 
 /*
@@ -84,7 +70,7 @@ svg path { fill: #B0BFDE; }
 */
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: 94px;
     width: 100%;
@@ -94,8 +80,6 @@ svg path { fill: #B0BFDE; }
     position: fixed;
     z-index: 5;
 }
-
-.header-logo { max-width: 72px; }
 
 .header-button-twitter {
     display: flex;
@@ -112,11 +96,14 @@ svg path { fill: #B0BFDE; }
 /*
 * Fancy titles & text block
 */
+.title { margin: 8px 0; }
+
 .future-title { max-width: 250px; }
 
 .information {
     margin: 32px 0;
     font-size: 1.2em;
+    font-family: Raleway;
 }
 
 .information p { 

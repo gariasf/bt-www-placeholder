@@ -9,16 +9,18 @@ html {
 body {
     word-wrap: break-word;
     -webkit-overflow-scrolling: touch;
+    background-color: #F5F6FA;
+    color: #7C8FB5;
+    font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 body, html { height: 100%; }
 
-html, body, div, span,
+html, body, div
 p,
 a,
 img,
-footer, header,
-button, a, {
+footer, header {
     margin: 0;
     padding: 0;
     border: 0;
@@ -33,12 +35,16 @@ img, svg {
     vertical-align: middle;
 }
 
-a { outline: none; }
-
 textarea {
     resize: vertical;
     overflow: auto;
     vertical-align: top;
 }
 
-a { text-decoration: none; }
+a { 
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+svg path { fill: #B0BFDE; }
