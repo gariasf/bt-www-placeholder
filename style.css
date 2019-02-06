@@ -1,0 +1,122 @@
+@import './reset.css';
+
+body {
+    background-color: #F5F6FA;
+    background-image: url(./assets/bg.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 105vh;
+    color: #7C8FB5;
+    font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+    color: #7C8FB5;
+}
+
+.content {
+    display: flex;
+    height: calc(100% - 94px);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.content-side {
+    flex: 1;
+    padding: 32px;
+    margin: auto;
+}
+
+.content-side-right img {
+    margin: 0 32px;
+}
+
+.content-side-left {
+    max-width: 600px;
+
+}
+
+.future-title {
+    max-width: 250px;
+}
+
+.information {
+    margin: 32px 0;
+    font-size: 1.2em;
+  
+}
+
+.information p {
+        margin: 12px 0;
+}
+
+.s-buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.s-button {
+    box-shadow: -10px 9px 21px rgba(128, 152, 213, .07);
+    background-color: #fff;
+    
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px 32px;
+    border-radius: 50px;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg path {
+    fill: #B0BFDE;
+}
+
+.s-button  svg {
+    flex-grow: 1;
+}
+
+.s-button:hover {
+    background-image: linear-gradient(to right, rgb(40, 161, 212), rgb(69, 196, 243));
+    color: #fff;
+}
+
+.s-button:hover  svg path {
+    fill: #fff;
+}
+
+.s-button-svg {
+    width: 24px;
+    height: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 94px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.header-logo {
+    max-width: 72px;
+}
+
+.header-button-twitter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+}
+
+.header-button-twitter:hover {
+   border-color: #7C8FB5;
+}
+
+.header-button-twitter:hover svg path{
+    fill: #38A1F3;
+}
