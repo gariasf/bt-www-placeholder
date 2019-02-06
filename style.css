@@ -1,11 +1,10 @@
 @import './reset.css';
 
+/*
+* Layout
+*/
 body {
     background-color: #F5F6FA;
-    background-image: url(./assets/bg.svg);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 105vh;
     color: #7C8FB5;
     font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
@@ -14,25 +13,71 @@ a { color: inherit; }
 
 svg path { fill: #B0BFDE; }
 
-/*
-* Layout
-*/
 .content {
     display: flex;
-    height: calc(100% - 94px);
+    min-height: 100%;
+    padding-top: 94px;
     max-width: 80%;
     margin: 0 auto;
 }
 
 .content-side {
     flex: 1;
-    padding: 32px;
-    margin: auto;
+    margin: 32px auto;
 }
 
 .content-side-right img { margin: 0 32px; }
 
-.content-side-left { max-width: 600px; }
+.content-side-left { position: relative; }
+
+.content-side-left,
+.content-side-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.entertainment-bg {
+    background-size: 10%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 9%;
+    background-repeat: no-repeat;
+    background-image: url(./assets/undraw_movie_night_93wl.svg); 
+}
+
+.wave-bg {
+    background-image: url(./assets/bg.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 105vh;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    z-index: -2;
+}
+
+.titles-container { display: flex; }
+
+.gaming-img-container {
+    display: flex;
+    width: 120px;
+    align-items: flex-end;
+    position: relative;
+}
+
+.gaming-img {
+    pointer-events: none;
+    transform: rotate(5deg);
+    width: 120px;
+    height: 100px;
+    top: 35px;
+    left: 0;
+    position: absolute;
+}
 
 /*
 * Header
@@ -42,8 +87,12 @@ svg path { fill: #B0BFDE; }
     justify-content: space-between;
     align-items: center;
     height: 94px;
+    width: 100%;
     max-width: 80%;
-    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    z-index: 5;
 }
 
 .header-logo { max-width: 72px; }
@@ -70,14 +119,19 @@ svg path { fill: #B0BFDE; }
     font-size: 1.2em;
 }
 
-.information p { margin: 12px 0; }
+.information p { 
+    margin: 12px 0;
+    font-weight: 500;
+}
 
 /*
-* Social platforms buttons
+* Platform buttons
 */
 .s-buttons-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .s-button {
@@ -86,8 +140,12 @@ svg path { fill: #B0BFDE; }
     text-transform: uppercase;
     font-weight: 500;
     cursor: pointer;
-    padding: 12px 32px;
+    padding: 12px 20px;
+    height: 50px;
+    line-height: 50px;
     border-radius: 50px;
+    margin: 12px 0;
+    min-width: 150px;
     margin-right: 12px;
     display: flex;
     justify-content: center;
@@ -104,4 +162,40 @@ svg path { fill: #B0BFDE; }
 .s-button-svg {
     width: 24px;
     height: auto;
+}
+
+@media(max-width: 1160px) {
+    .content { flex-direction: column-reverse; }
+
+    .content-side { margin: 8px auto; }
+
+    .content-side-right {
+        flex: .5;
+        max-width: 500px;
+    }
+
+    .content-side-right img { max-height: 220px; }
+
+    .information { max-width: none; }
+}
+
+@media(max-width: 800px) { 
+    .gaming-img-container,
+    .entertainment-bg,
+    .content-side-right { display: none; }
+
+    .content-side { margin: 32px auto; }
+
+    .wave-bg { background-position: 50%; }
+
+    .content,
+    .header  { max-width: 90%; }
+}
+
+@media (max-width: 620px) {
+    .s-buttons-container { justify-content: space-around; }
+}
+
+@media (min-width: 1160px) {
+    .content-side-left { max-width: 600px; }
 }
