@@ -52,13 +52,20 @@ a {
 
 svg path { fill: #B0BFDE; }
 
+::selection {
+    background: rgba(124, 143, 181, .8);
+    color: #fff;
+}
+
 /*
 * Layout
 */
 body {
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
+
 .content {
     display: flex;
     flex: 1;
@@ -72,7 +79,10 @@ body {
     margin: 32px auto;
 }
 
-.content-side-right img { margin: 0 32px; }
+.content-side-right img { 
+    margin: 0 32px;
+    pointer-events: none;
+}
 
 .content-side-left { position: relative; }
 
@@ -216,6 +226,7 @@ body {
 .information p { 
     margin: 12px 0;
     font-weight: 500;
+    user-select: text;
 }
 
 .rocket-image {
