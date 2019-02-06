@@ -56,13 +56,19 @@
     display: flex;
     width: 145px;
     position: relative;
+    animation-duration: .8s;
+    animation-delay: .3s;
+    animation-name: come-in-from-top;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .gaming-img {
     pointer-events: none;
-    transform: rotate(5deg);
     width: 145px;
     height: 100px;
+    transform: rotate(5deg);
+    transition: transform .8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /*
@@ -87,28 +93,61 @@
     align-items: center;
     font-weight: 500;
     border-bottom: 1px solid transparent;
+    transition: border-color .4s cubic-bezier(0.19, 1, 0.22, 1)
 }
 
 .header-button-twitter:hover { border-color: #7C8FB5; }
+
+.header-button-twitter svg path { transition: fill .8s cubic-bezier(0.19, 1, 0.22, 1); }
 
 .header-button-twitter:hover svg path { fill: #38A1F3; }
 
 /*
 * Fancy titles & text block
 */
-.title { margin: 8px 0; }
+.title { 
+    margin: 8px 0;
+    max-width: 250px;
+}
 
-.future-title { max-width: 250px; }
+.future-title { 
+    max-width: 250px;
+    animation-duration: .8s;
+    animation-name: come-in-from-top;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.bytetime-title {
+    animation-delay: .2s;
+    animation-duration: .8s;
+    animation-name: come-in-from-top;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
 
 .information {
     margin: 32px 0;
     font-size: 1.2em;
     font-family: Raleway;
+    animation-delay: .4s;
+    animation-duration: .8s;
+    animation-name: come-in-from-top;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .information p { 
     margin: 12px 0;
     font-weight: 500;
+}
+
+.rocket-image {
+    animation-delay: .2s;
+    animation-duration: .8s;
+    animation-name: come-in-from-bottom;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /*
@@ -119,6 +158,11 @@
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
+    animation-delay: .5s;
+    animation-duration: 1s;
+    animation-name: come-in-from-top;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .s-button {
@@ -151,6 +195,36 @@
     height: auto;
 }
 
+/*
+* Transitions & Animations
+*/
+@keyframes come-in-from-top {
+    from {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes come-in-from-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+/*
+* Media Queries
+*/
 @media(max-width: 1160px) {
     .content { flex-direction: column-reverse; }
 
