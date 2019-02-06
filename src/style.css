@@ -194,6 +194,7 @@ body {
 .title { 
     margin: 8px 0;
     max-width: 250px;
+    pointer-events: none;
 }
 
 .future-title { 
