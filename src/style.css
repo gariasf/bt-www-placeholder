@@ -69,7 +69,7 @@ body {
 .content {
     display: flex;
     flex: 1;
-    padding-top: 94px;
+    padding-top: 34px;
     max-width: 80%;
     margin: 0 auto;
 }
@@ -232,7 +232,7 @@ body {
 
 .rocket-image {
     animation-delay: .2s;
-    animation-duration: .8s;
+    animation-duration: 1s;
     animation-name: come-in-from-bottom;
     animation-fill-mode: backwards;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
@@ -347,4 +347,10 @@ body {
 
 @media (min-width: 1160px) {
     .content-side-left { max-width: 600px; }
+}
+
+@media(max-height: 590px) and (orientation: landscape) {
+    .wave-bg { background-position: right; }
+    
+    .content { display: block; }
 }
