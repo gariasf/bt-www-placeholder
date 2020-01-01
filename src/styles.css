@@ -204,7 +204,8 @@ body {
 }
 
 .content-title img {
-  max-width: 300px;
+  flex: 0.5;
+  width: 34%;
 }
 
 .content-title span {
@@ -218,7 +219,7 @@ body {
 }
 
 .t-svg {
-  max-width: 200px;
+  max-width: 145px;
 }
 
 /*
@@ -243,6 +244,37 @@ body {
 
   .content {
     display: block;
+  }
+}
+
+@media (max-width: 1040px) {
+  .content-title {
+    flex-direction: column;
+  }
+
+  .content-title span {
+    margin-top: 0;
+  }
+
+  .content-title img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 620px) {
+  .content-title {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .t-svg {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .t-svg {
+    display: none;
   }
 }
 
